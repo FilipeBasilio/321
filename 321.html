@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cachorro Feliz e Triste</title>
+  <style>
+    /* Estilização do cachorro */
+    #cachorro {
+      width: 200px;
+      height: 200px;
+      transition: transform 0.3s; /* Animação suave */
+    }
+  </style>
+</head>
+<body>
+
+<h2>Passe o mouse sobre o cachorro!</h2>
+
+<!-- Imagem do cachorro -->
+<img 
+  id="cachorro" 
+  src="triste.png" 
+  alt="Cachorro triste"
+  onmouseover="mudarParaFeliz()" 
+  onmouseout="mudarParaTriste()"
+/>
+
+<script>
+  // Função para mudar para a imagem de cachorro feliz
+  function mudarParaFeliz() {
+    const cachorro = document.getElementById('cachorro');
+    cachorro.src = 'feliz.png'; // Caminho da imagem de cachorro feliz
+    cachorro.alt = 'Cachorro feliz';
+    cachorro.style.transform = 'scale(1.1)'; // Aumenta um pouco o tamanho para um efeito visual
+  }
+
+  // Função para mudar para a imagem de cachorro triste
+  function mudarParaTriste() {
+    const cachorro = document.getElementById('cachorro');
+    cachorro.src = 'triste.png'; // Caminho da imagem de cachorro triste
+    cachorro.alt = 'Cachorro triste';
+    cachorro.style.transform = 'scale(1)'; // Volta ao tamanho original
+  }
+</script>
+
+</body>
+</html>
